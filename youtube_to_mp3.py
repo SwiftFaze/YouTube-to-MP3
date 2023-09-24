@@ -1,5 +1,20 @@
 from pytube import YouTube
 
+dragon = r"""
+                \||/
+                |  @___oo
+      /\  /\   / (__,,,,|
+     ) /^\) ^\/ _)
+     )   /^\/   _)
+     )   _ /  / _)
+ /\  )/\/ ||  | )_)
+<  >      |(,,) )__)
+ ||      /    \)___)\
+ | \____(      )___) )___
+  \______(_______;;; __;;;
+"""
+
+print(dragon)
 youtube_url = input("Enter your YouTube URL: ")
 
 
@@ -11,9 +26,11 @@ def on_progress(stream, chunk, bytes_remaining):
     num_spaces = 50 - num_equals if percentage < 100 else 0
     print(f"\rDownloading: [{int(percentage)}% {'=' * num_equals}{' ' * num_spaces}]", end='')
 
+
 def on_complete(stream, file_handle):
     print(f"\nFile saved as: {file_handle.name}")
     input("Press any key to exit")
+
 
 video = YouTube(youtube_url, on_progress_callback=on_progress)
 stream = video.streams.get_audio_only()
