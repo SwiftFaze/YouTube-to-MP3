@@ -1,4 +1,11 @@
-# Youtube to mp3
+# YouTube to mp3
+
+
+## Packages
+`pip install pyinstaller`
+
+`pip install pytube`
+
 
 
 ## Build
